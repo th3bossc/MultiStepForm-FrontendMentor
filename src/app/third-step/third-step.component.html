@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="title">
+        <h1 class="page-title"> Pick add-ons </h1>
+        <h4 class="page-info"> Add ons help enhance your gaming experience </h4>
+    </div>
+
+    <form class="form" [formGroup]="thirdStepForm">
+
+        <div
+        *ngFor="let option of thirdFormData"
+        class="form-group"
+        [ngClass]="{active : thirdStepForm.value[option.name]}">
+            <input type="checkbox" [id]="option.name" class="form-input" [formControlName]="option.name" />
+            <label [for]="option.name" class="option">
+                <span class="option-title"> {{ option.title }} </span>
+                <span class="option-info"> {{ option.info }} </span>
+            </label>
+            <span class="option-price"> +${{ option.price[currentPlan ? 1 : 0] + (currentPlan ? '/yr' : '/mo')}} </span>
+        </div>
+    </form>
+
+    <div class="routes">
+        <button class="prev-page" [routerLink]="['/home/second']"> Go Back </button>
+        <button class="next-page" (click)="onSubmit()" [disabled]="!thirdStepForm.valid"> Next Step </button>
+    </div>
+</div>

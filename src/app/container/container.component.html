@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="form">
+        <div class="sidebar">
+            <img class="image desktop" src="./assets/images/bg-sidebar-desktop.svg" alt="image">
+            <img class="image mobile" src="./assets/images/bg-sidebar-mobile.svg" alt="image">
+        </div>
+        <div class="content">
+            <div class="nav">
+                <div class="current-page">
+                    <span class="page-num" [ngClass]="{active : currentRoute === 'first'}"> 1 </span>
+                    <div class="step">
+                        <span class="step-num"> STEP 1 </span>
+                        <span class="step-info"> YOUR INFO </span>
+                    </div>
+                </div>
+                <div class="current-page">
+                    <span class="page-num" [ngClass]="{active : currentRoute === 'second'}"> 2 </span>
+                    <div class="step">
+                        <span class="step-num"> STEP 2 </span>
+                        <span class="step-info"> SELECT PLAN </span>
+                    </div>
+                </div>
+                <div class="current-page">
+                    <span class="page-num" [ngClass]="{active : currentRoute === 'third'}"> 3 </span>
+                    <div class="step">
+                        <span class="step-num"> STEP 3 </span>
+                        <span class="step-info"> ADD-ONS </span>
+                    </div>
+                </div>
+                <div class="current-page">
+                    <span class="page-num" [ngClass]="{active : (currentRoute === 'fourth' || currentRoute === 'final')}"> 4 </span>
+                    <div class="step">
+                        <span class="step-num"> STEP 4 </span>
+                        <span class="step-info"> SUMMARY </span>
+                    </div>
+                </div>
+            </div>
+            <div class="routes">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>

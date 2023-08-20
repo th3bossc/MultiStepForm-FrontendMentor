@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="title">
+        <h1 class="page-title"> Personal info </h1>
+        <h4 class="page-info"> Please provide your name, email address and phone number </h4>
+    </div>
+
+    <form class="form" [formGroup]="firstStepForm">
+        <div 
+        *ngFor="let entry of firstFormData"
+        class="form-group" 
+        [ngClass]="{required : firstStepForm.controls[entry.title].invalid && firstStepForm.controls[entry.title].dirty}">
+            <div class="meta-data">
+                <label [for]="entry.title"> {{ entry.title | titlecase }} </label>    
+                <ng-template *ngFor="let error of entry.errors">
+                    <span 
+                    class="error" 
+                    *ngIf="firstStepForm.controls[entry.title].errors && firstStepForm.controls[entry.title].errors[error]"> 
+                        This field is required 
+                    </span>
+                </ng-template>
+            </div>
+            <input type="text" [id]="entry.title" [name]="entry.title" [placeholder]="entry.placeholder" [formControlName]="entry.title">
+        </div>
+    </form> 
+    <div class="routes">
+        <button class="next-page" (click)="onSubmit()" [disabled]="!firstStepForm.valid"> Next Step </button>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="title">
+        <h1 class="page-title"> Select your plan </h1>
+        <h4 class="page-info"> You have the option for monthly or yearly billing </h4>
+    </div>
+
+    <form class="form" [formGroup]="secondStepForm">
+        <div class="options">
+            <a 
+            *ngFor="let option of secondFormData"
+            class="option"
+            [ngClass]="{active : secondStepForm.value['option'] === option.value}">
+                <input class="radio" type="radio" [id]="option.value" [value]="option.value" formControlName="option">
+                <img class="image" [src]="option.image" [alt]="option.value">
+                <div class="option-data">
+                    <span class="option-title"> {{ option.title }} </span>
+                    <span class="option-price"> ${{ option.price[secondStepForm.value['plan'] ? 1 : 0] + (secondStepForm.value['plan'] ? '/yr' : '/mo') }} </span>
+                    <span class="option-info" *ngIf="secondStepForm.value['plan']"> 2 months free </span>
+                </div>
+            </a>
+        </div>
+
+        <div class="plan">
+            Monthly
+            <label class="switch">
+                <input type="checkbox" id="switch" name="switch" formControlName="plan" value="yearly">
+                <span class="slider"></span>
+            </label>
+            Yearly
+        </div>
+    </form>
+    <div class="routes">
+        <button class="prev-page" [routerLink]="['/home/first']"> Go Back </button>
+        <button class="next-page" (click)="onSubmit()" [disabled]="!secondStepForm.valid"> Next Step </button>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="title">
+        <h1 class="page-title"> Finishing up </h1>
+        <h4 class="page-info"> Double-check everything looks OK before submitting. </h4>
+    </div>
+
+    <div class="summary">
+        <div class="summary-second">
+            <div class="summary-info">
+                <span class="summary-title"> {{ summaryData.summarySecond.option | titlecase }} {{ summaryData.summarySecond.plan ? '(Yearly)' : '(Monthly)' }} </span>
+                <a class="summary-edit" [routerLink]="['/home/second']"> change </a>
+            </div>
+            <span class="summary-price"> ${{ summaryData.summarySecond.price }}/{{ summaryData.summarySecond.plan ? 'yr' : 'mo' }} </span>
+        </div>
+        <hr>
+        <div class="summary-third"> 
+            <div class="summary-info" *ngFor="let addOn of summaryData.summaryThird">
+                <span class="summary-title"> {{ addOn.name | titlecase }} </span>
+                <span class="summary-price"> ${{ addOn.price }}/{{ summaryData.summarySecond.plan ? 'yr' : 'mo' }} </span>
+            </div>
+        </div>
+    </div>
+    <span class="summary-total">
+        <span class="summary-title"> Total (per {{ summaryData.summarySecond.plan ? 'year' : 'month' }}) </span>
+        <span class="summary-price"> $ {{ total }}/{{ summaryData.summarySecond.plan ? 'yr' : 'mo' }}  </span>
+    </span>
+
+    <div class="routes">
+        <button class="prev-page" [routerLink]="['/home/third']"> Go Back </button>
+        <button class="next-page" [routerLink]="['/home/final']"> Confirm </button>
+    </div>
+</div>

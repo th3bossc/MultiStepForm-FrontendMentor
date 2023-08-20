@@ -1,0 +1,105 @@
+.container {
+    padding : 50px 80px 0 80px;
+    height : 100%;
+    width : 100%;
+    display : flex;
+    flex-direction: column;
+    .title {
+        .page-info {
+            color : var(--cool-gray);
+            font-weight : 500;
+            margin-top : 10px;
+        }
+    }
+
+    .form {
+        margin-top : 50px;
+        display : flex;
+        flex-direction: column;
+        gap : 1rem;        
+        .form-group {
+            display : flex;
+            flex-direction: column;
+            .meta-data {
+                display : flex;
+                justify-content : space-between;
+                padding : 0.5rem 0;
+                .error {
+                    display : none;
+                }
+            }
+            input {
+                width : 100%;
+                padding : 1rem 1rem;
+                font-family : 'Ubuntu', sans-serif;
+                border : 2px solid lightgray;
+                border-radius : 10px;
+                font-weight: 700;
+
+                &:focus, &:active {
+                    border-color: var(--purplish-blue);
+                    outline : none;
+                }
+            }
+
+            &.required {
+                input {
+                    border-color: var(--strawberry-red);
+                }
+                .meta-data {
+                    .error {
+                        display : inline;
+                        color : var(--strawberry-red);
+                        font-weight : 500;
+                    }
+                }
+            }
+        }
+    }
+    .routes {
+        margin-top : auto;
+        align-self : flex-end;
+        .next-page {
+            padding : 1rem 1.5rem;
+            font-weight : 700;
+            color : var(--white);
+            border : none;
+            border-radius : 10px;
+            background-color: var(--marine-blue);
+            transition : opacity 100ms cubic-bezier(0.6, 0.04, 0.98, 0.335);
+            &:hover {
+                opacity : 0.9;
+            }
+        }
+    }
+}
+
+@media (width < 1000px) {
+    .container {
+        padding : 3rem 2rem 0.5rem 2rem;
+        height : 70dvh;
+        overflow: scroll;
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        scrollbar-width: none;  /* Firefox */
+        &::-webkit-scrollbar {
+            display: none;  /* Safari and Chrome */
+        }
+
+        .routes {
+            display : flex;
+            justify-content: end;
+            // outline : 1px solid red;
+            background-color: var(--white);
+            width : 100%;
+            position : fixed;
+            bottom : 0;
+            right : 0;
+            padding : 1rem;
+
+            .next-page {
+                padding : 0.8rem 1.2rem;
+                border-radius : 5px;
+            }
+        }
+    }
+}
