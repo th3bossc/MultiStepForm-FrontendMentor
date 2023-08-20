@@ -5,7 +5,10 @@ import { StoreDataService } from '../Services/store-data.service';
 
 interface firstFormDataInterface {
   title : string;
-  errors : string[];
+  errors : {
+    type : string;
+    message : string;
+  }[];
   placeholder : string;
 };
 
@@ -19,9 +22,9 @@ interface firstFormDataInterface {
 export class FirstStepComponent {
   firstStepForm: FormGroup;
   firstFormData : firstFormDataInterface[] = [
-    { title : 'name', errors : ['required'], placeholder : 'e.g. Stephen King'},
-    { title : 'email', errors : ['required', 'email'], placeholder : 'e.g. stephenking@lorem.com' },
-    { title : 'phone', errors : ['required'], placeholder : 'e.g. +1 234 567 890' },
+    { title : 'name', errors : [{type : 'required', message : 'This field is required'}], placeholder : 'e.g. Stephen King'},
+    { title : 'email', errors : [{type : 'required', message : 'This field is required'}, {type : 'email', message : 'Not a valid email'}], placeholder : 'e.g. stephenking@lorem.com' },
+    { title : 'phone', errors : [{type : 'required', message : 'This field is required'}], placeholder : 'e.g. +1 234 567 890' },
   ];
   constructor(private router : Router, private dataService : StoreDataService) { }
 

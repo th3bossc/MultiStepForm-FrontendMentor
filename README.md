@@ -1,27 +1,74 @@
-# MultiStepForm
+# Frontend Mentor - Multi-step form solution
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.2.
+This is a solution to the [Multi-step form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Development server
+## Table of contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Overview
 
-## Build
+### The challenge
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Users should be able to:
 
-## Running unit tests
+- Complete each step of the sequence
+- Go back to a previous step to update their selections
+- See a summary of their selections on the final step and confirm their order
+- View the optimal layout for the interface depending on their device's screen size
+- See hover and focus states for all interactive elements on the page
+- Receive form validation messages if:
+  - A field has been missed
+  - The email address is not formatted correctly
+  - A step is submitted, but no selection has been made
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Screenshot
 
-## Running end-to-end tests
+![](./screenshot.png)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Links
 
-## Further help
+- Live Site URL: [Github Pages](https://th3bossc.github.io/MultiStepForm-FrontendMentor/)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- [AngularJS](https://angular.io/) - JS library
+- [Sass](https://sass-lang.com) - CSS Preprocessor
+- [Styled Components](https://styled-components.com/) - For styles
+
+
+### What I learned
+
+Throughout the project, I had to work with data being passed from component to component, and saving state. I learnt how to efficiently pass data from one component to another, and how to create UI that looks good not just in Desktop, but mobile UI as well
+
+
+### Useful resources
+
+- [Angular Documentation](https://angular.io/docs) - Angular documentation helped me a lot when working with projects, and needed to know how a specific feature was used, and the best way to use it.
+
+## Author
+
+- Website - [Diljith P D](https://th3bossc.github.io/Portfolio)
+- Frontend Mentor - [@th3bossc](https://www.frontendmentor.io/profile/th3bossc)
+
+
+## Acknowledgments
+
+I thank my collegues for helping me in the challenges i faced, as well as the youtube channels, Kevin Powell and webdevsimplified for the robust frontend tips which came in handy while working on this website

@@ -11,13 +11,13 @@
         [ngClass]="{required : firstStepForm.controls[entry.title].invalid && firstStepForm.controls[entry.title].dirty}">
             <div class="meta-data">
                 <label [for]="entry.title"> {{ entry.title | titlecase }} </label>    
-                <ng-template *ngFor="let error of entry.errors">
+                <ng-container *ngFor="let error of entry.errors">
                     <span 
                     class="error" 
-                    *ngIf="firstStepForm.controls[entry.title].errors && firstStepForm.controls[entry.title].errors[error]"> 
-                        This field is required 
+                    *ngIf="firstStepForm.controls[entry.title].errors && firstStepForm.controls[entry.title].errors[error.type]"> 
+                        {{ error.message }}
                     </span>
-                </ng-template>
+                </ng-container>
             </div>
             <input type="text" [id]="entry.title" [name]="entry.title" [placeholder]="entry.placeholder" [formControlName]="entry.title">
         </div>
